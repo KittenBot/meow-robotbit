@@ -1,0 +1,14 @@
+{
+    "name": "robotbit",
+    "version": "0.2.8",
+    "description": "Extension for Meowbit x Robotbit",
+    "license": "MIT",
+    "dependencies": {
+        "core": "*"
+    },
+    "files": [
+        "README.md",
+        "main.ts"
+    ],
+    "public": true
+}
