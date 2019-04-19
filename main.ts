@@ -460,7 +460,7 @@ namespace robotbit {
 
     //% blockId=robotbit_ultrasonic block="Ultrasonic|pin %pin"
     //% weight=10
-    export function Ultrasonic(pin: DigitalPin): number {
+    export function Ultrasonic(pin: DigitalInOutPin): number {
 
         // send pulse
         pin.setPull(PinPullMode.PullNone);
