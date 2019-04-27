@@ -4,12 +4,15 @@
     "description": "Extension for Meowbit x Robotbit",
     "license": "MIT",
     "dependencies": {
-        "core": "*"
+        "core": "*",
+        "edge-connector": "*",
+        "serial": "*"
     },
     "files": [
         "README.md",
         "main.ts",
         "_locales/zh/robotbit-strings.json"
     ],
-    "public": true
+    "public": true,
+    "preferredEditor": "tsprj"
 }

@@ -21,7 +21,6 @@ Extension for Meowbit x Robotbit
 ## Back
 ![image](https://user-images.githubusercontent.com/3390845/34512098-04fecc1a-f09b-11e7-9ec6-62fcc0780773.png)
 
-
 ----------
 
 For more infomation please visit [http://www.kittenbot.cn/](http://www.kittenbot.cn/ "Kittenbot BBS")
@@ -32,9 +31,9 @@ MIT
 
 ## Supported targets
 
-* for PXT/meowbit
+* for PXT/arcade
 (The metadata above is needed for package search.)
 
 ```package
-robotbit=github:Kittenbot/meowbit-robotbit
+robotbit=github:Kittenbot/meow-robotbit
 ```

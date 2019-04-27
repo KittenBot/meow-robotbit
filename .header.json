@@ -1,20 +1,18 @@
 {
-    "target": "meowbit",
-    "targetVersion": "0.1.6",
+    "target": "arcade",
+    "targetVersion": "0.11.8",
     "name": "robotbit",
     "meta": {},
     "editor": "tsprj",
     "pubId": "",
     "pubCurrent": false,
     "_rev": null,
-    "id": "2bf3c80f-2abb-4ad0-5b16-ad56019086e2",
-    "recentUse": 1551773121,
-    "modificationTime": 1551772970,
+    "id": "8967f497-d422-4454-af5d-e300eab29b93",
+    "recentUse": 1556362977,
+    "modificationTime": 1556362977,
     "blobId": null,
     "blobVersion": null,
     "blobCurrent": false,
     "isDeleted": false,
-    "path": "meow-robotbit",
-    "githubCurrent": false,
-    "saveId": null
+    "path": "meow-robotbit"
 }
