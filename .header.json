@@ -8,11 +8,13 @@
     "pubCurrent": false,
     "_rev": null,
     "id": "8967f497-d422-4454-af5d-e300eab29b93",
-    "recentUse": 1556362977,
-    "modificationTime": 1556362977,
+    "recentUse": 1558333690,
+    "modificationTime": 1558333690,
     "blobId": null,
     "blobVersion": null,
     "blobCurrent": false,
     "isDeleted": false,
-    "path": "meow-robotbit"
+    "path": "meow-robotbit",
+    "githubCurrent": false,
+    "saveId": null
 }

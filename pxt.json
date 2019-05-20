@@ -1,12 +1,11 @@
 {
     "name": "robotbit",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "description": "Extension for Meowbit x Robotbit",
     "license": "MIT",
     "dependencies": {
         "core": "*",
-        "edge-connector": "*",
-        "serial": "*"
+        "edge-connector": "*"
     },
     "files": [
         "README.md",
