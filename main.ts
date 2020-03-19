@@ -69,6 +69,11 @@ namespace robotbit {
         M2 = 0x2
     }
 
+    export enum SonarVersion {
+        V1 = 0x1,
+        V2 = 0x2
+    }
+
     export enum Turns {
         //% blockId="T1B4" block="1/4"
         T1B4 = 90,
@@ -217,6 +222,27 @@ namespace robotbit {
         }
         // 50hz: 20,000 us
         let v_us = ((degree - 90) * 20 / 3 + 1500) // 0.6 ~ 2.4
+        let value = v_us * 4096 / 20000
+        setPwm(index + 7, 0, value)
+    }
+
+    /**
+     * GeekServo2KG
+     * @param index Servo Channel; eg: S1
+     * @param degree [0-360] degree of servo; eg: 0, 180, 360
+    */
+    //% blockId=robotbit_gservo2kg block="GeekServo2KG|%index|degree %degree"
+    //% weight=98
+    //% blockGap=50
+    //% degree.min=0 degree.max=360
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    export function GeekServo2KG(index: Servos, degree: number): void {
+        if (!initialized) {
+            initPCA9685()
+        }
+        // 50hz: 20,000 us
+        //let v_us = (degree * 2000 / 360 + 500)  0.5 ~ 2.5
+        let v_us = (Math.floor((degree) * 2000 / 350) + 500) //fixed
         let value = v_us * 4096 / 20000
         setPwm(index + 7, 0, value)
     }
@@ -385,9 +411,9 @@ namespace robotbit {
         }
     }
 
-    //% blockId=robotbit_ultrasonic block="Ultrasonic|pin %pin"
-    //% weight=10
-    export function Ultrasonic(pin: DigitalInOutPin): number {
+    //% blockId=robotbit_rgb_ultrasonic block="rgbUltrasonic|pin %pin"
+    //% weight=11
+    export function RgbUltrasonic(pin: DigitalInOutPin): number {
 
         // send pulse
         pin.setPull(PinPullMode.PullNone);
@@ -408,5 +434,27 @@ namespace robotbit {
         return Math.floor(ret * 10 / 6 / 58);
     }
 
+    //% blockId=robotbit_hole_ultrasonic block="holeUltrasonic|pin %pin"
+    //% weight=10
+    export function HoleUltrasonic(pin: DigitalInOutPin): number {
+
+        // send pulse
+        pin.setPull(PinPullMode.PullDown);
+        pin.digitalWrite(false);
+        control.waitMicros(2);
+        pin.digitalWrite(true);
+        control.waitMicros(10);
+        pin.digitalWrite(false);
+
+        // read pulse
+        let d = pin.pulseIn(PulseValue.High, 25000);
+        let ret = d;
+        // filter timeout spikes
+        if (ret == 0 && distanceBuf != 0) {
+            ret = distanceBuf;
+        }
+        distanceBuf = d;
+        return Math.floor(ret / 40 + (ret / 800));
+    }
 
 }
